@@ -20,3 +20,5 @@ Route::get('/', function () {
 Route::get('/publicaciones',[\App\Http\Controllers\PublicacionesController::class, 'index']);
 
 Route::post('/publicaciones',[\App\Http\Controllers\PublicacionesController::class, 'store'])->name('guardarPublicacion');
+
+Route::get('/crear-publicacion',[\App\Http\Controllers\PublicacionesController::class, 'create']);

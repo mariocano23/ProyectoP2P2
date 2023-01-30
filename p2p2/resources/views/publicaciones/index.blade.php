@@ -8,7 +8,7 @@
                     @foreach($publicaciones as $publicacion)
                         <div class="col">
                             <div class="card shadow-sm">
-                                <img  class="bd-placeholder-img card-img-top" width="100%" height="225" href="{{$publicacion->foto}}">
+                                <img  class="bd-placeholder-img card-img-top" width="100%" height="225" href="{{$publicacion->imagen}}">
                                 <div class="card-body">
                                     <p class="card-text">{{$publicacion->titulo}}</p>
                                     <div class="d-flex justify-content-between align-items-center">
