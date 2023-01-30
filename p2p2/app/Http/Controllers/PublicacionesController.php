@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Publicaciones;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class PublicacionesController extends Controller
 {
@@ -14,7 +15,7 @@ class PublicacionesController extends Controller
      */
     public function index()
     {
-        //
+        $publicaciones = Publicaciones::all();
     }
 
     /**
@@ -35,7 +36,22 @@ class PublicacionesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'usuario' => 'string',
+            'foto' => 'required|string',
+            'titulo' => 'required|string',
+            'descripcion' => 'string',
+            'enventa' => 'boolean',
+            'precio' => 'decimal:0,2'
+        ]);
+
+        $publicacion=Publicaciones::create($request['usuario'],$request['foto'],$request['titulo'],$request['descripcion'],$request['enventa'] ?? 0,$request['precio']);
+
+        if ($publicacion){
+            return redirect("/publicaciones");
+        }else{
+            return back();
+        }
     }
 
     /**
