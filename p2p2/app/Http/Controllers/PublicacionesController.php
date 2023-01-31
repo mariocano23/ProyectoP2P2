@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Publicaciones;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 
@@ -40,7 +41,6 @@ class PublicacionesController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'usuario' => 'required',
             'imagen' => 'required',
             'titulo' => 'required',
             'descripcion' => 'required',
@@ -49,7 +49,7 @@ class PublicacionesController extends Controller
         ]);
 
             $publicacion= new Publicaciones();
-            $publicacion->usuario=$request['usuario'];
+            $publicacion->usuario=Auth::user()->getAuthIdentifier();
             $publicacion->imagen=$request['imagen'];
             $publicacion->titulo=$request['titulo'];
             $publicacion->descripcion=$request['descripcion'];
@@ -81,7 +81,7 @@ class PublicacionesController extends Controller
      */
     public function edit(Publicaciones $publicaciones)
     {
-        //
+        return view('publicaciones.edit',compact('publicaciones'));
     }
 
     /**
@@ -93,7 +93,24 @@ class PublicacionesController extends Controller
      */
     public function update(Request $request, Publicaciones $publicaciones)
     {
-        //
+        $request->validate([
+            'imagen' => 'required',
+            'titulo' => 'required',
+            'descripcion' => 'required',
+            'enventa' => 'boolean',
+            'precio' => 'nullable|decimal:0,2'
+        ]);
+
+        $publicaciones->usuario=Auth::user()->getAuthIdentifier();
+        $publicaciones->imagen=$request['imagen'];
+        $publicaciones->titulo=$request['titulo'];
+        $publicaciones->descripcion=$request['descripcion'];
+        $publicaciones->enventa=$request['enventa'] ?? 0;
+        $publicaciones->precio=$request['precio'];
+
+        $publicaciones->update();
+
+        return redirect("/publicaciones");
     }
 
     /**
@@ -104,7 +121,12 @@ class PublicacionesController extends Controller
      */
     public function destroy(Publicaciones $publicaciones)
     {
-        //
+        try {
+            $publicaciones -> deleteOrFail();
+        }catch (\Throwable $e){
+            return back();
+        }
+        return redirect('/publicaciones');
     }
 
     public function crearPublicaciones()

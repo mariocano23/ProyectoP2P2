@@ -8,10 +8,7 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/pista">Pistas</a>
+                        <a class="nav-link active" aria-current="page" href="/publicaciones">Inicio</a>
                     </li>
                     @auth
                         <li class="nav-item">
@@ -28,9 +25,6 @@
                         <a class="nav-link" href="/login">Login</a>
                     </li>
                     @endauth
-                    <li class="nav-item">
-                        <a class="nav-link disabled">Disabled</a>
-                    </li>
                 </ul>
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

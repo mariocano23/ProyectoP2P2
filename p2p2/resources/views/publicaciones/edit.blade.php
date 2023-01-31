@@ -5,55 +5,39 @@
 
         <div class=" w-50 m-auto py-5 bg-light">
             <div class="container px-5">
-                <h2>Modificación de Pista {{$pista->id}}</h2>
-                <form action="/pista/{{$pista->id}}" method="post">
+                <h2>Modificación de Publicacion: {{$publicaciones->titulo}}</h2>
+                <form action="/publicacion/{{$publicaciones->id}}" method="post">
                     {{csrf_field()}}
                     @method('put')
                     <div class="form-check form-switch">
-                        <label for="inputLuz" class="form-label">Luz</label>
-                        @if($pista->luz)
-                            <input type="checkbox" class="form-check-input" id="inputLuz" name="luz" checked>
-                        @else
-                            <input type="checkbox" class="form-check-input" id="inputLuz" name="luz" >
-                        @endif
-
+                        <label for="inputTitulo" class="form-label">Título</label>
+                        <input type="text" class="form-control" id="inputTitulo" name="titulo" value="{{$publicaciones->titulo}}">
                     </div>
                     <div class="form-check form-switch">
-                        <label for="inputPrecioLuz" class="form-label">Precio Luz</label>
-                        <input type="number" class="form-control" id="inputPrecioLuz" name="precioLuz" value="{{$pista->precioLuz}}">
+                        <label for="inputDescripcion" class="form-label">Descripción</label>
+                        <textarea name="descripcion" id="inputDescripcion" class="form-control">{{$publicaciones->descripcion}}</textarea>
                     </div>
 
                     <div class="form-check form-switch">
-                        @if($pista->cubierta)
-                            <input class="form-check-input" type="checkbox" role="switch" id="inputCubierta" name="cubierta" checked>
-                        @else
-                            <input class="form-check-input" type="checkbox" role="switch" id="inputCubierta" name="cubierta" >
-                        @endif
-                            <label class="form-check-label" for="inputCubierta">Pista Cubierta</label>
+                        <label for="inputImagen" class="form-label">Imagen</label>
+                        <input type="text" class="form-control" id="inputImagen" name="imagen" value="{{$publicaciones->imagen}}">
                     </div>
+                    @if($publicaciones->enventa)
+                        <div class="form-check form-switch">
+                            <label for="inputEnventa" class="form-check-label">En Venta</label>
+                            <input type="checkbox" class="form-check-input" id="inputEnventa" name="enventa" value=1 checked>
+                        </div>
+                    @else
+                        <div class="form-check form-switch">
+                            <label for="inputEnventa" class="form-check-label">En Venta</label>
+                            <input type="checkbox" class="form-check-input" id="inputEnventa" name="enventa" value=1>
+                        </div>
+                    @endif
                     <div class="form-check form-switch">
-                        @if($pista->disponible)
-                            <input class="form-check-input" type="checkbox" role="switch" id="inputDisponible" name="disponible" checked>
-                        @else
-                            <input class="form-check-input" type="checkbox" role="switch" id="inputDisponible" name="disponible" >
-                        @endif
-                        <label class="form-check-label" for="inputDisponible">Pista Disponible</label>
+                        <label for="inputPrecio" class="form-label">Precio</label>
+                        <input type="number" step="0.01" class="form-control" id="inputPrecio" name="precio" value="{{$publicaciones->precio}}">
                     </div>
-                    <div class="form-check form-switch">
-                        <label class="form-check-label" for="selectTipo">Tipo de Pista</label>
-                        <select class="form-select form-select-lg mb-3" id="selectTipo" name="tipoPista" aria-label=".form-select-lg example">
-                            @if($pista->tipoPista=="individual")
-                                <option value="individual" selected>Individual</option>
-                                <option value="dobles">Dobles</option>
-                            @else
-                                <option value="individual" >Individual</option>
-                                <option value="dobles" selected>Dobles</option>
-                            @endif
-                        </select>
-
-                    </div>
-
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary">Editar</button>
                 </form>
 
             </div>

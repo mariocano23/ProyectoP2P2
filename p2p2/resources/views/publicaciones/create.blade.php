@@ -7,10 +7,6 @@
                     <form action="{{route('guardarPublicacion')}}" method="post">
                         {{csrf_field()}}
                         <div class="form-check form-switch">
-                            <label for="inputUsuario" class="form-label">Usuario</label>
-                            <input type="text" class="form-control" id="inputUsuario" name="usuario" >
-                        </div>
-                        <div class="form-check form-switch">
                             <label for="inputTitulo" class="form-label">Título</label>
                             <input type="text" class="form-control" id="inputTitulo" name="titulo" >
                         </div>

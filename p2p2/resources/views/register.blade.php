@@ -7,28 +7,21 @@
             <form action="/register" method="post">
                 {{csrf_field()}}
                 <div class="form-group">
-                    <label for="inputNombre">Nombre</label>
-                    <input type="text" class="form-control" id="inputNombre" name="nombre">
+                    <label for="inputUsername">Nombre de usuario</label>
+                    <input type="text" class="form-control" id="inputUsername" name="username">
                 </div>
-                <div class="form-group">
-                    <label for="inputApellidos">Apellidos</label>
-                    <input type="text" class="form-control" id="inputApellidos" name="apellidos">
-                </div>
-                <div class="form-group">
-                    <label for="inputTelefono">Teléfono</label>
-                    <input type="text" class="form-control" id="inputTelefono" name="telefono">
-                </div>
+
                 <div class="form-group">
                     <label for="inputCorreo">Correo</label>
-                    <input type="email" class="form-control" id="inputCorreo" aria-describedby="emailHelp" placeholder="Enter email" name="email">
+                    <input type="email" class="form-control" id="inputCorreo" aria-describedby="emailHelp" name="email">
                 </div>
                 <div class="form-group">
                     <label for="InputPassword1">Contraseña</label>
-                    <input type="password" class="form-control" id="InputPassword1" placeholder="Password" name="password">
+                    <input type="password" class="form-control" id="InputPassword1"  name="password">
                 </div>
                 <div class="form-group">
-                    <label for="InputPasswordConfirmation">Contraseña</label>
-                    <input type="password" class="form-control" id="InputPasswordConfirmation" placeholder="Password" name="password_confirmation">
+                    <label for="InputPasswordConfirmation">Confirmar Contraseña</label>
+                    <input type="password" class="form-control" id="InputPasswordConfirmation"  name="password_confirmation">
                 </div>
                 <button type="submit" class="btn btn-primary">Registrarse</button>
             </form>

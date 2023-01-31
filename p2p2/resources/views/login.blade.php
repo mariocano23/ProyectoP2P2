@@ -8,11 +8,11 @@
                 {{csrf_field()}}
                 <div>
                     <label for="inputCorreo">Correo</label>
-                    <input type="email" class="form-control" id="inputCorreo" aria-describedby="emailHelp" placeholder="Enter email" name="email">
+                    <input type="email" class="form-control" id="inputCorreo" aria-describedby="emailHelp" name="email">
                 </div>
                 <div class="form-group">
                     <label for="InputPassword1">Contraseña</label>
-                    <input type="password" class="form-control" id="InputPassword1" placeholder="Password" name="password">
+                    <input type="password" class="form-control" id="InputPassword1" name="password">
                 </div>
                 <button type="submit" class="btn btn-primary">Iniciar sesión</button>
             </form>
