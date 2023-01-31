@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Publicaciones;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 
 class PublicacionesController extends Controller
@@ -38,32 +39,27 @@ class PublicacionesController extends Controller
      */
     public function store(Request $request)
     {
-        $validacion = $this->validate($request,[
-            'usuario' => 'string',
-            'imagen' => 'required|string',
-            'titulo' => 'required|string',
-            'descripcion' => 'string',
+        $request->validate([
+            'usuario' => 'required',
+            'imagen' => 'required',
+            'titulo' => 'required',
+            'descripcion' => 'required',
             'enventa' => 'boolean',
-            'precio' => 'decimal:0,2'
+            'precio' => 'nullable|decimal:0,2'
         ]);
 
-
-        if($validacion->fails()){
-            return back()->withErrors(['mensaje' => "error al crear la publicación."]);
-        }else{
             $publicacion= new Publicaciones();
             $publicacion->usuario=$request['usuario'];
             $publicacion->imagen=$request['imagen'];
             $publicacion->titulo=$request['titulo'];
-            $publicacion->titulo=$request['titulo'];
             $publicacion->descripcion=$request['descripcion'];
-            $publicacion->enventa=$request['enventa'];
+            $publicacion->enventa=$request['enventa'] ?? 0;
             $publicacion->precio=$request['precio'];
 
             $publicacion->save();
 
             return redirect("/publicaciones");
-        }
+
     }
 
     /**
@@ -74,7 +70,7 @@ class PublicacionesController extends Controller
      */
     public function show(Publicaciones $publicaciones)
     {
-        //
+        return view('publicaciones.show',compact('publicaciones'));
     }
 
     /**

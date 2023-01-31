@@ -25,16 +25,17 @@
                         </div>
                         <div class="form-check form-switch">
                             <label for="inputEnventa" class="form-check-label">En Venta</label>
-                            <input type="checkbox" class="form-check-input" id="inputEnventa" name="enventa" >
+                            <input type="checkbox" class="form-check-input" id="inputEnventa" name="enventa" value=1>
                         </div>
                         <div class="form-check form-switch">
                             <label for="inputPrecio" class="form-label">Precio</label>
-                            <input type="number" class="form-control" id="inputPrecio" name="precio" >
+                            <input type="number" step="0.01" class="form-control" id="inputPrecio" name="precio" >
                         </div>
                         <button type="submit" class="btn btn-primary">Crear</button>
                     </form>
-
             </div>
         </div>
     </section>
+    @include('parciales.errores')
+
 @endsection
