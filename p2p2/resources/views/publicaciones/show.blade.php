@@ -86,21 +86,6 @@
                                     @endif
                                 @endauth
 
-                                <nav>
-                                    <ul class="pagination">
-                                        @if($publicaciones->id!=1)
-                                            <li class="page-item"><a class="page-link" href="/publicacion/{{($publicaciones->id)-1}}">Anterior</a></li>
-                                        @else
-                                            <li class="page-item disabled"><a class="page-link" href="/publicacion/{{($publicaciones->id)-1}}">Anterior</a></li>
-                                        @endif
-                                        @if($publicaciones->id!=\App\Models\Publicaciones::latest()->first()->id)
-                                            <li class="page-item"><a class="page-link" href="/publicacion/{{($publicaciones->id)+1}}">Siguiente</a></li>
-                                        @else
-                                            <li class="page-item disabled"><a class="page-link" href="/publicacion/{{($publicaciones->id)+1}}">Siguiente</a></li>
-                                        @endif
-                                    </ul>
-                                </nav>
-
                             </div>
                         </div>
                     </div>

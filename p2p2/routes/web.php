@@ -36,3 +36,7 @@ Route::get('/login',[\App\Http\Controllers\RegisterController::class, 'createLog
 Route::post('/login',[\App\Http\Controllers\RegisterController::class, 'storeLogin']);
 
 Route::get('/logout',[\App\Http\Controllers\RegisterController::class, 'destroyLogin']);
+
+Route::get('/mi-cuenta/{user}',[\App\Http\Controllers\RegisterController::class, 'show']);
+
+Route::put('/mi-cuenta/{user}',[\App\Http\Controllers\RegisterController::class, 'update']);

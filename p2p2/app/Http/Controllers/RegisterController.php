@@ -54,7 +54,7 @@ class RegisterController extends Controller
             $user->username=$request['username'];
             $user->email=$request['email'];
             $user->password=Hash::make($request['password']);
-            $user->foto='https://cdn.icon-icons.com/icons2/1154/PNG/512/1486564400-account_81513.png';
+            $user->foto='https://cdn-icons-png.flaticon.com/512/456/456212.png';
 
             $user->save();
 
@@ -70,12 +70,13 @@ class RegisterController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\User
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(User $user)
     {
-        //
+        $publicaciones = DB::table('publicaciones')->where('usuario',$user->id)->get();
+        return view('users.show',compact('user'), compact('publicaciones'));
     }
 
     /**
@@ -86,19 +87,32 @@ class RegisterController extends Controller
      */
     public function edit($id)
     {
-        //
+
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\User
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $user)
     {
-        //
+        $validacion = Validator::make($request->all(), [
+            'descripcion' => 'required',
+            'foto' => 'required'
+        ]);
+
+        $user->descripcion=$request['descripcion'];
+        $user->foto=$request['foto'];
+
+        $user->update();
+
+        return back();
+
+
+
     }
 
     /**
@@ -138,8 +152,8 @@ class RegisterController extends Controller
     }
 
     public static function showUsername($userID){
-        $usename = DB::table('users')->where('id',$userID)->value('username');
-        return $usename;
+        $username = DB::table('users')->where('id',$userID)->value('username');
+        return $username;
     }
 
 
