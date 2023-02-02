@@ -23,3 +23,5 @@ Route::get('/publicaciones/{publicaciones}', [\App\Http\Controllers\Api\Publicac
 
 Route::get('/usuarios', [\App\Http\Controllers\Api\UsersApiController::class, 'index']);
 Route::get('/usuarios/{users}', [\App\Http\Controllers\Api\UsersApiController::class, 'show']);
+
+Route::get('/usuarios/{users}/publicaciones', [\App\Http\Controllers\Api\PublicacionesApiController::class, 'showByUser']);

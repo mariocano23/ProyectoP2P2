@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\Publicaciones;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Symfony\Component\HttpFoundation\Response;
 
 class PublicacionesApiController extends Controller
@@ -53,6 +54,14 @@ class PublicacionesApiController extends Controller
         $publicacion = Publicaciones::find($publicaciones);
         return response($publicacion, Response::HTTP_OK);
     }
+
+    public function showByUser($user)
+    {
+        $publicaciones = DB::table('publicaciones')->where('usuario',$user)->get();
+        return response($publicaciones, Response::HTTP_OK);
+    }
+
+
 
     /**
      * Show the form for editing the specified resource.

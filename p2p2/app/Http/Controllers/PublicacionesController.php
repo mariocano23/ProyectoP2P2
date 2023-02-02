@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Publicaciones;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 
@@ -129,11 +130,17 @@ class PublicacionesController extends Controller
         return redirect('/publicaciones');
     }
 
+    public function search(Request $request)
+    {
+        $publicaciones = DB::table('publicaciones')->where('titulo','like','%'.$request['busqueda'].'%')->orWhere('descripcion','like','%'.$request['busqueda'].'%')->get();
+        return view( 'publicaciones.index', ['publicaciones'=>$publicaciones]);
+    }
+
     public function crearPublicaciones()
     {
         $publicacion = new Publicaciones();
 
-        $publicacion->usuario="pepe123";
+        $publicacion->usuario="1";
         $publicacion->imagen="https://i.ytimg.com/vi/biiJfvppa9Q/maxresdefault.jpg";
         $publicacion->titulo="ps2 chipiada";
         $publicacion->descripcion="ps2 chipiada por mi primito";

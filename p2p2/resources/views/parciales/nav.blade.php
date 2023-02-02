@@ -30,8 +30,9 @@
                     </li>
                     @endauth
                 </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <form class="d-flex" role="search" action="/publicaciones-busqueda/" method="get">
+                    {{csrf_field()}}
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="busqueda">
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
             </div>

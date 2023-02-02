@@ -24,6 +24,8 @@ Route::delete('/publicacion/{publicaciones}',[\App\Http\Controllers\Publicacione
 Route::put('/publicacion/{publicaciones}',[\App\Http\Controllers\PublicacionesController::class, 'update']);
 Route::post('/publicaciones',[\App\Http\Controllers\PublicacionesController::class, 'store'])->name('guardarPublicacion');
 
+Route::get('/publicaciones-busqueda/',[\App\Http\Controllers\PublicacionesController::class, 'search']);
+
 Route::get('/modificar-publicacion/{publicaciones}',[\App\Http\Controllers\PublicacionesController::class, 'edit']);
 Route::get('/crear-publicacion',[\App\Http\Controllers\PublicacionesController::class, 'create']);
 
