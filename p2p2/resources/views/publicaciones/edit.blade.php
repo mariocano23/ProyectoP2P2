@@ -6,7 +6,7 @@
         <div class=" w-50 m-auto py-5 bg-light">
             <div class="container px-5">
                 <h2>Modificación de Publicacion: {{$publicaciones->titulo}}</h2>
-                <form action="/publicacion/{{$publicaciones->id}}" method="post">
+                <form id="formPublicacion" action="/publicacion/{{$publicaciones->id}}" method="post">
                     {{csrf_field()}}
                     @method('put')
                     <div class="form-check form-switch">
@@ -37,12 +37,15 @@
                         <label for="inputPrecio" class="form-label">Precio</label>
                         <input type="number" step="0.01" class="form-control" id="inputPrecio" name="precio" value="{{$publicaciones->precio}}">
                     </div>
-                    <button type="submit" class="btn btn-primary">Editar</button>
+                    <button id="botonSubmitPublicacion" type="submit" class="btn btn-primary">Editar</button>
                 </form>
 
             </div>
         </div>
     </section>
+
+    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
+    <script type="module" src="/../../js/validarPublicacion.js"></script>
 
     @include('parciales.errores')
 

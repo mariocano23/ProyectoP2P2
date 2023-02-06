@@ -30,18 +30,25 @@ validate
         ]
     )
     .addField('#inputCorreo',[
-            {rule: 'required',},
-            {rule: 'email',},
+            {rule: 'required',
+                errorMessage: 'Campo requerido.',},
+            {rule: 'email',
+                errorMessage: 'Formato inválido.',},
         ]
     )
     .addField('#InputPassword1', [
         {
             rule: 'required',
+            errorMessage: 'Campo requerido.',
         },
+        {rule: 'minLength',
+            errorMessage: 'La longitud minima la contraseña es de 6 caracteres.',
+            value: 6,},
     ])
     .addField('#InputPasswordConfirmation', [
         {
             rule: 'required',
+            errorMessage: 'Campo requerido.',
         },
         {
             validator: (value, fields) => {

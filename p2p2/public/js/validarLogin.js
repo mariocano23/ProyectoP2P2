@@ -1,7 +1,7 @@
 "use strict";
 
 const validate = new window.JustValidate('#formLogin',{ validateBeforeSubmitting: true});
-const form = document.getElementById('formRegistro');
+const form = document.getElementById('formLogin');
 document.getElementById('botonSubmitLogin').addEventListener("click", (e) => {
 
     if (validate.isValid){
@@ -15,13 +15,16 @@ document.getElementById('botonSubmitLogin').addEventListener("click", (e) => {
 
 validate
     .addField('#inputCorreo',[
-            {rule: 'required',},
-            {rule: 'email',},
+        {rule: 'required',
+            errorMessage: 'Campo requerido.',},
+        {rule: 'email',
+            errorMessage: 'Formato inválido.',},
         ]
     )
     .addField('#InputPassword1', [
         {
             rule: 'required',
+            errorMessage: 'Campo requerido.',
         },
     ]);
 
