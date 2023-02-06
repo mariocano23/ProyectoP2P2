@@ -4,7 +4,7 @@
     <div class=" w-50 m-auto py-5 bg-light">
         <div class="container px-5">
             <h2>Registro de usuario</h2>
-            <form action="/register" method="post">
+            <form id="formRegistro" action="/register" method="post">
                 {{csrf_field()}}
                 <div class="form-group">
                     <label for="inputUsername">Nombre de usuario</label>
@@ -23,10 +23,13 @@
                     <label for="InputPasswordConfirmation">Confirmar Contraseña</label>
                     <input type="password" class="form-control" id="InputPasswordConfirmation"  name="password_confirmation">
                 </div>
-                <button type="submit" class="btn btn-primary">Registrarse</button>
+                <button type="submit" class="btn btn-primary" id="botonSubmitRegister">Registrarse</button>
             </form>
         </div>
     </div>
+     <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
+    <script type="module" src="/../../js/validarRegistro.js"></script>
 
     @include('parciales.errores')
+
 @endsection
