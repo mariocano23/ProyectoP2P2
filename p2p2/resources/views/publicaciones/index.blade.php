@@ -33,5 +33,5 @@
             </div>
         </div>
     </section>
-
+    @include('parciales.footer')
 @endsection

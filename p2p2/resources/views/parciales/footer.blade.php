@@ -1,7 +1,7 @@
 <!-- FOOTER -->
-<footer class="container">
-    <p class="float-end"><a href="#">Back to top</a></p>
-    <p>&copy; 2017–2022 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+<footer class="container ">
+    <p class="float-end"><a href="#">Volver arriba</a></p>
+    <p class="text-center">&copy; 2023 Copyright: Mario Cano & Alejandro Manuel Rubio  &middot; </p>
 </footer>
 </main>
     <script src="../js/bootstrap.bundle.min.js"></script>

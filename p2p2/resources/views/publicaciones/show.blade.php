@@ -22,20 +22,20 @@
         </div>
     </div>
     <section>
-        <div class="col-md-7 mx-5">
-            <h2 class="featurette-heading fw-normal lh-1">{{$publicaciones->titulo}}</h2>
-
-        </div>
-        <div class="container-fluid py-5 bg-light m-0">
+        <div class="container-fluid py-5 pt-4 m-0">
             <div class="container">
-                <div class="row">
-                    <div class="col-4">
-                            <img src="{{$publicaciones->imagen}}" class="bd-placeholder-img card-img-top" width="100%" height="225">
+                <div class="row justify-content-center">
+                    <div class="col-8">
+                        <img src="{{$publicaciones->imagen}}" class="mx-auto d-block rounded-2" width="100%" height="500px">
                     </div>
+                </div>
+                <div class="row justify-content-center pt-3">
                     <div class="col-8">
                         <div class="card">
                             <div class="card-body">
+                                <h2 class="fw-normal lh-1 mt-2">{{$publicaciones->titulo}}</h2>
                                 <p class="lead">Características</p>
+
                                     <p >Propietario: &nbsp {{\App\Http\Controllers\RegisterController::showUsername($publicaciones->usuario)}}</p>
 
                                     <p ><pre>{{$publicaciones->descripcion}}</pre> </p>

@@ -35,8 +35,24 @@
 </div>
 </div>
 </div>
-<script type="module" src="../../../js/consumirApiPublicacionesUsuario.js">
-</script>
+
+
+        <script type="module" src="../../../js/consumirApiPublicacionesUsuario.js">
+        </script>
+        @else
+
+            <h2 class="m-auto text-center">No puedes ver los ajustes de esta cuenta</h2>
+            <div class="m-auto">
+                <img class="mx-auto d-block" src="https://media.tenor.com/c5a_h8U1MzkAAAAC/nuh-uh-beocord.gif">
+            </div>
         @endif
+        @else
+
+            <h2 class="m-auto text-center">No puedes acceder aquí sin iniciar sesión</h2>
+            <div class="m-auto">
+                <img class="mx-auto d-block" src="https://media.tenor.com/c5a_h8U1MzkAAAAC/nuh-uh-beocord.gif">
+            </div>
+
+
     @endauth
 @endsection
