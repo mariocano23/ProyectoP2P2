@@ -4,4 +4,4 @@
 
 @yield('contenido')
 
-
+@include('parciales.scripts')

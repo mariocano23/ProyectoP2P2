@@ -26,7 +26,7 @@
         </div>
         <div class="col-md-4">
             <div id="publicacionesUsuario" class="p-3 py-5">
-                <div  class="d-flex justify-content-between align-items-center experience"><span>Mis publicaciones</span></div><br>
+                <div  class="d-flex justify-content-between align-items-center experience"><h4>Mis publicaciones</h4></div><br>
 
             </div>
         </div>

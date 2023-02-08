@@ -4,7 +4,7 @@ import {getDatos} from "./bibliotecaGets.js";
 
 var doc = window.document;
 
-const  creaPublicacionesUsuario = async(publicaciones) =>{
+const  creaPublicacionesUsuario = async(publicaciones) =>{ //Función que pinta la lista de publicaciones de un usuario.
 
     let publicacionesResueltas = await getDatos(publicaciones);
     let contenedorPublicaciones = doc.getElementById("publicacionesUsuario");
@@ -51,7 +51,7 @@ const  creaPublicacionesUsuario = async(publicaciones) =>{
     })
 }
 
-const  creaVistaUsuario = async(usuario) => {
+const  creaVistaUsuario = async(usuario) => { //Función que pinta los datos de un usuario y sus ajustes.
 
     let usuarioResuelto = await getDatos(usuario);
     let contenedorDatosUsuario = doc.getElementById("datosUsuario");

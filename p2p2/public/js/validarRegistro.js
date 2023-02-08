@@ -1,9 +1,5 @@
 "use strict";
 
-
-
-
-
 const validate = new window.JustValidate('#formRegistro',{ validateBeforeSubmitting: true});
 const form = document.getElementById('formRegistro');
 

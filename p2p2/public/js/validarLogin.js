@@ -2,6 +2,7 @@
 
 const validate = new window.JustValidate('#formLogin',{ validateBeforeSubmitting: true});
 const form = document.getElementById('formLogin');
+
 document.getElementById('botonSubmitLogin').addEventListener("click", (e) => {
 
     if (validate.isValid){
@@ -9,7 +10,6 @@ document.getElementById('botonSubmitLogin').addEventListener("click", (e) => {
     }else{
         e.preventDefault();
     }
-
 
 })
 

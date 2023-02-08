@@ -125,11 +125,21 @@ class RegisterController extends Controller
     {
         //
     }
+    /**
+     * Show the form for the login.
+     *
+     * @return \Illuminate\Http\Response
+     */
 
     public function createLogin(){
         return view('login');
     }
-
+    /**
+     * Starts the session of the user.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function storeLogin(Request $request){
 
         $credenciales = [
@@ -145,12 +155,21 @@ class RegisterController extends Controller
         }
 
     }
-
+    /**
+     * Closes the session of the user.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function destroyLogin(){
         Auth::logout();
         return redirect('/publicaciones');
     }
-
+    /**
+     * Returns the username of the user with their ID.
+     *
+     * @param  String  $userID
+     * @return String
+     */
     public static function showUsername($userID){
         $username = DB::table('users')->where('id',$userID)->value('username');
         return $username;

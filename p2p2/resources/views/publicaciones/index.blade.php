@@ -9,7 +9,7 @@
                 <div id="contenedorPublicaciones" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                     @foreach($publicaciones as $publicacion)
                         <div class="col">
-                            <div class="card shadow-sm">
+                            <div class="card shadow-sm ">
                                 <img  class="bd-placeholder-img card-img-top" width="100%" height="225" src="{{$publicacion->imagen}}">
                                 <div class="card-body">
                                     <p class="card-text">{{$publicacion->titulo}}</p>

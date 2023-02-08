@@ -10,10 +10,6 @@
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
 
-
-
-
-
     <link href="../css/bootstrap.min.css" rel="stylesheet">
 
     <style>
@@ -66,6 +62,9 @@
             text-align: center;
             white-space: nowrap;
             -webkit-overflow-scrolling: touch;
+        }
+        .cardPop:hover{
+            transform: scale(1.02);
         }
     </style>
 

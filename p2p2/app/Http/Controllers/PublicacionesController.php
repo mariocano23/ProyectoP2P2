@@ -136,6 +136,12 @@ class PublicacionesController extends Controller
         return view( 'publicaciones.index', ['publicaciones'=>$publicaciones]);
     }
 
+    /**
+     * Creates an example of a publication.
+     *
+     * @return \Illuminate\Http\Response
+     */
+
     public function crearPublicaciones()
     {
         $publicacion = new Publicaciones();
@@ -147,9 +153,6 @@ class PublicacionesController extends Controller
         $publicacion->enventa=true;
         $publicacion->precio=10;
 
-
         $publicacion->save();
-
-
     }
 }

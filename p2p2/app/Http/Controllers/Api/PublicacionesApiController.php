@@ -46,7 +46,7 @@ class PublicacionesApiController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int  $publicaciones
      * @return \Illuminate\Http\Response
      */
     public function show($publicaciones)
@@ -54,7 +54,12 @@ class PublicacionesApiController extends Controller
         $publicacion = Publicaciones::find($publicaciones);
         return response($publicacion, Response::HTTP_OK);
     }
-
+    /**
+     * Display the specified resource by User.
+     *
+     * @param  int  $user
+     * @return \Illuminate\Http\Response
+     */
     public function showByUser($user)
     {
         $publicaciones = DB::table('publicaciones')->where('usuario',$user)->get();
