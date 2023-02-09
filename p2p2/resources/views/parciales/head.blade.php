@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="e">
+<html lang="es">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="author" content="Mario Cano & Alejandro Manuel Rubio">
     <meta name="generator" content="Hugo 0.108.0">
     <title>P2P2</title>
 
@@ -65,6 +65,9 @@
         }
         .cardPop:hover{
             transform: scale(1.02);
+        }
+        body{
+            font-family: Arial;
         }
     </style>
 

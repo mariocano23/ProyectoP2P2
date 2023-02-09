@@ -129,7 +129,12 @@ class PublicacionesController extends Controller
         }
         return redirect('/publicaciones');
     }
-
+    /**
+     * Devuelve una vista con las publicaciones según los criterios de la búsqueda.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function search(Request $request)
     {
         $publicaciones = DB::table('publicaciones')->where('titulo','like','%'.$request['busqueda'].'%')->orWhere('descripcion','like','%'.$request['busqueda'].'%')->get();

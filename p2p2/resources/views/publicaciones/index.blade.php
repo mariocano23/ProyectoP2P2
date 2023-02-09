@@ -10,7 +10,8 @@
                     @foreach($publicaciones as $publicacion)
                         <div class="col">
                             <div class="card shadow-sm cardPop">
-                                <img  class="bd-placeholder-img card-img-top" width="100%" height="225" src="{{$publicacion->imagen}}">
+                                <a href="/publicacion/{{$publicacion->id}}"><img  class="bd-placeholder-img card-img-top" width="100%" height="225" src="{{$publicacion->imagen}}"></a>
+
                                 <div class="card-body">
                                     <p class="card-text">{{$publicacion->titulo}}</p>
                                     <div class="d-flex justify-content-between align-items-center">
@@ -33,5 +34,6 @@
             </div>
         </div>
     </section>
+
     @include('parciales.footer')
 @endsection
