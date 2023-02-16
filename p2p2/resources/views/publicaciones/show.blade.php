@@ -52,7 +52,7 @@
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <p>¿ Desea borrar esta publicación: {{$publicaciones->titulo}}?<br>La acción no se podrá deshacer.</p>
+                                                    <p>¿Desea borrar esta publicación: {{$publicaciones->titulo}}?<br>La acción no se podrá deshacer.</p>
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Cerrar</button>
