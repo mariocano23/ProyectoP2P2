@@ -39,7 +39,7 @@
                         <label for="inputPrecio" class="form-label">Precio</label>
                         <input type="number" step="0.01" class="form-control" id="inputPrecio" name="precio" value="{{$publicaciones->precio}}">
                     </div>
-                    <button id="botonSubmitPublicacion" type="submit" class=" btn btn-primary ">Editar</button>
+                    <button id="botonSubmitPublicacion" type="submit" class=" btn btn-primary ">Aceptar</button>
                 </form>
 
             </div>
